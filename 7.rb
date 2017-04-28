@@ -9,7 +9,7 @@ time = Benchmark.measure do
       if(i % prime == 0) # if the number is divisible by the current prime, check next i immediately
         break
       else
-        if(prime == primes.last) #
+        if(prime == primes.last) # we hit the end of the list, checked all of the others preceding it
           primes.push(i) # ..we found a new prime!
         else
           next
