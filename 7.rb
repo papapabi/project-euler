@@ -1,9 +1,8 @@
 require "benchmark"
 
-primes = [2] # initialize list of primes, starting with 2
-i = 3 # current number
-
 time = Benchmark.measure do
+  primes = [2] # initialize list of primes, starting with 2
+  i = 3 # current number
   until primes.size == 10001 do
     primes.each do |prime|
       if(i % prime == 0) # if the number is divisible by the current prime, check next i immediately
@@ -18,9 +17,9 @@ time = Benchmark.measure do
     end
     i += 1
   end
+  puts "10001th prime: #{primes.last}"
 end
 
-puts "10001th prime: #{primes.last}"
 puts "Time elapsed (in seconds): #{time}"
 
 

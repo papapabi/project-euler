@@ -1,5 +1,6 @@
 # this solution implements the sieve of eratosthenes
 # https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+
 require 'benchmark'
 
 time = Benchmark.measure do
@@ -10,7 +11,6 @@ time = Benchmark.measure do
   # the array size after this operation will be 20000001, but the resulting array will be setup for 'properly-indexed' elements
   # for instance, [0, 1, 2] => [false, false, true]: where 0 is not a prime, 1 is not a prime, 2 is a prime, and so on
 
-
   (2..UPPER_BOUND).each do |i|
     if(list[i] == true)
       (i**2..MAX_NUM).step(i).each do |j|
@@ -20,6 +20,7 @@ time = Benchmark.measure do
   end
   puts "The sum of all primes < 2,000,000 is #{list.each_index.select { |i| list[i] == true }.inject(:+)}"
 end
+
 puts "Time elapsed (in seconds): #{time}"
 
 
