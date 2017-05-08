@@ -1,6 +1,6 @@
 # Project Euler
 
-[Project Euler](https://projecteuler.net/ "Project Euler's website") is a website dedicated to a series of computational problems intended to be solved with computer programs. Problems are of varying difficulty but each is solvable, as they say, in less than a minute using an efficient algorithm on a modestly-powered computer.^[https://en.wikipedia.org/wiki/Project_Euler]
+[Project Euler](https://projecteuler.net/ "Project Euler's website") is a website dedicated to a series of computational problems intended to be solved with computer programs. Problems are of varying difficulty but each is solvable, as they say, in less than a minute using an efficient algorithm on a modestly-powered computer.<sup>[https://en.wikipedia.org/wiki/Project_Euler]</sup>
 
 This repository is a collection of all my solutions to said problems.
 
@@ -12,3 +12,10 @@ To execute the files, simply clone this repository and type:
 $ ruby <problem_number>.rb
 ```
 The program will output the solution for Problem <problem_number>, and the time it took to find  that solution.
+
+## Example ouptut
+```
+$ ruby 21.rb
+The sum of all amicable numbers under 10,000 is 31626
+Time elapsed (in seconds):   0.220000   0.010000   0.230000 (  0.267515)
+```
