@@ -18,10 +18,6 @@ as it would surely influence how you'd go about solving them yourself.
 > "Real learning is an active process, and seeing how it is done is a long way from experiencing that epiphany of discovery." <br/>
 > -- Project Euler, on searching solutions online
 
-Often, the true value of a thing isn't the thing itself, but instead the activity that created it;
-so looking at someone else's solution would drain all the fun out of your ~learning experience~.
-
-
 ## How to run the files
 
 To see the solution of a particular problem, simply clone this repository
