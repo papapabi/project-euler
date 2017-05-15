@@ -2,7 +2,7 @@
 
 [Project Euler](https://projecteuler.net/ "Project Euler's website") is a website dedicated to a series of [computational problems](https://projecteuler.net/archives) intended to be solved with computer programs.
 Problems are of varying difficulty but each is solvable, as they say,
-in less than a minute using an efficient algorithm on a modestly-powered computer.<sup>[1](https://en.wikipedia.org/wiki/Project_Euler)</sup>
+in less than a minute using an efficient algorithm on a modestly-powered computer.
 
 I try to solve, at the very least, one problem each day. And I often solve these problems sequentially.
 If I am unable to do so in an hour; 2 hours tops -- I usually just suck it up and drop it from my TODOs;
