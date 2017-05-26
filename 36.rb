@@ -14,5 +14,4 @@ time = Benchmark.measure do
   puts 'The sum of all palindromic numbers in base 2 and 10 < 1,000,000'\
   " is #{palindromic_numbers(UPPER_BOUND).reduce(:+)}"
 end
-
-puts time
+puts "Time elapsed (in seconds): #{time}"

@@ -30,9 +30,11 @@ def largest_pandigital
   return largest_pandigital
 end
 
+time = Benchmark.measure do
 puts 'The largest 1-9 pandigital number that can be formed '\
      ' as the concatenated product of an integer and (1..9)'\
      " is #{largest_pandigital}"
-
+end
+puts "Time elapsed (in seconds): #{time}"
 
 
