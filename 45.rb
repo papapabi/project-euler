@@ -12,10 +12,9 @@ module Polygonal
   # A number x is pentagonal iff n = (sqrt(24*x + 1) + 1) / 6
   # This method returns the index n of a number if it is pentagonal.
   # Derived from n*(3n-1)/2 = x, with completing the square.
-  # Note that this is only applicable for general pentagonal numbers.
   def pentagonal?
     chk = 24*self + 1
-    return false unless chk.square?
+    return false unless chk.square? && (integer_sqrt(chk) % 6 == 5)
     (Math.sqrt(24*self + 1).round + 1) / 6
   end
 
@@ -27,15 +26,15 @@ module Polygonal
     (Math.sqrt(8*self + 1).round + 1) / 6
   end
 
-
+  # Returns true if the receiver is a perfect square.
   def square?
     (integer_sqrt(self)**2 == self)
   end
 
   private
-  # Using newton's method to check what the integer square root of a number is.
-  # An integer square root of n is the positive integer m which is the greatest
-  # integer less than or equal to the square root of n.
+  # Returns the integer square of n, that is, ceil(sqrt(n)); verbosely:
+  # An integer square root of n is the positive integer m which is the
+  # greatest integer less than or equal to the square root of n.
   def integer_sqrt(n)
     if n < 2
       return n
