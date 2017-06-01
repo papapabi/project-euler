@@ -12,9 +12,10 @@ module Polygonal
   # A number x is pentagonal iff n = (sqrt(24*x + 1) + 1) / 6
   # This method returns the index n of a number if it is pentagonal.
   # Derived from n*(3n-1)/2 = x, with completing the square.
-  # Note: this is only sufficient for generalized pentagonal numbers.
+  # Note that this is only applicable for general pentagonal numbers.
   def pentagonal?
-    return false unless (24*self + 1).square?
+    chk = 24*self + 1
+    return false unless chk.square?
     (Math.sqrt(24*self + 1).round + 1) / 6
   end
 
@@ -26,13 +27,27 @@ module Polygonal
     (Math.sqrt(8*self + 1).round + 1) / 6
   end
 
-  # John Cook's method to check if an integer is a perfect square.
-  # Perfect squares in base 16 end in 0, 1, 4, or 9.
+
   def square?
-    l_hexdig = self & 0xF # Get the last digit of a number in hex (base-16).
-    return false if l_hexdig > 9
-    (l_hexdig != 2 && l_hexdig != 3 && l_hexdig != 5 &&
-     l_hexdig != 6 && l_hexdig != 7 && l_hexdig != 8) ? true : false
+    (integer_sqrt(self)**2 == self)
+  end
+
+  private
+  # Using newton's method to check what the integer square root of a number is.
+  # An integer square root of n is the positive integer m which is the greatest
+  # integer less than or equal to the square root of n.
+  def integer_sqrt(n)
+    if n < 2
+      return n
+    else
+      small_candidate = integer_sqrt(n >> 2) << 1
+      large_candidate = small_candidate + 1
+      if large_candidate*large_candidate > n
+        return small_candidate
+      else
+        return large_candidate
+      end
+    end
   end
 end
 
@@ -45,9 +60,10 @@ end
 def tri_penta_hexa_number
   # Find the next triangular number after 40755
   # that is both pentagonal and hexagonal.
-  ans = 40755
+  i, ans = 143, 0
   loop do
-    ans += 2 # We only need to check odd numbers
+    i += 1
+    ans = i * (2*i - 1)
     break if ans.triangular? && ans.pentagonal? && ans.hexagonal?
   end
   ans
