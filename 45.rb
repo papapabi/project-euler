@@ -76,10 +76,3 @@ time = Benchmark.measure do
   puts "Number: #{ans}"
 end
 puts "Time elapsed (in seconds): #{time}"
-
-
-
-
-
-
-

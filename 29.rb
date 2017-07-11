@@ -3,12 +3,9 @@ require 'benchmark'
 # Finds all distinct terms in the expression a^b given
 # inclusive range [a, b] where a and b are both at least 2.
 def distinct_terms(a:, b:)
-  a = a.to_i
-  b = b.to_i
-  raise ArgumentError, 'Argument is not numeric' unless a.is_a? Integer and b.is_a? Integer
   ar = []
   (2..a).each do |i|
-  (2..b).each do |j|
+    (2..b).each do |j|
       ar << i ** j
     end
   end
